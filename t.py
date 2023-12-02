@@ -1,10 +1,10 @@
-from flask import Flask
-from flask import send_file
+from flask import Flask, render_template
+
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def index():
-    return send_file("index.html")
+    return render_template('index.html')
 
-if __name__ == "__main__":
-    app.run()
+if __name__ == '__main__':
+    app.run(debug=True, port=3333)
